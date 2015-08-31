@@ -1,0 +1,104 @@
+@import 'normalize';
+@import 'transforms';
+@import 'flipper';
+$mainBackground: #C0392B;
+
+header {
+  background: $mainBackground;
+  text-align: center;
+  h1 {
+    color: #ffffff;
+  }
+}
+#wrapper ul {
+
+  list-style: none;
+  li {
+    background: lighten($mainBackground, 20%);
+    display: inline-block;
+    width: 33%;
+    text-align: center;
+
+    // a {
+    //   text-decoration: none;
+    //   color: darken($mainBackground, 20%);
+    // }
+    // a:hover {
+    //   text-decoration: underline;
+    // }
+    // a.importante {
+    //   font-weight: bold;
+    //   font-size: 2em;
+    // }
+
+    a {
+      text-decoration: none;
+      color: darken($mainBackground, 20%);
+      &:hover {
+        text-decoration: underline;
+      }
+      &.importante {
+        font-weight: bold;
+        font-size: 2em;
+      }
+    }
+
+  }
+}
+
+.sun {
+  height: 500px;
+  animation: tiy 2s linear alternate infinite;
+
+}
+
+.spin {
+  animation: spin 2s linear infinite;
+
+}
+
+@keyframes tiy {
+  0% {
+    fill: rgba($mainBackground, .5);
+  }
+  50% {
+    fill: darken(rgba($mainBackground, .5), 50%);
+  }
+  75% {
+    fill: darken(rgba($mainBackground, .5), 90%);
+
+  }
+}
+
+
+@keyframes sunrise {
+    0% {
+        background-color: rgba(255, 0, 68, .5);
+    }
+    30% {
+        background-color: rgba(255, 0, 119, .5);
+    }
+    50% {
+        background-color: rgba(0, 72, 255, .5);
+    }
+    65% {
+        background-color: rgba(0, 255, 123, .5);
+    }
+    85% {
+        background-color: rgba(255, 115, 0, .5);
+    }
+    100% {
+        background-color: rgba(255, 0, 0, .5);
+    }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}

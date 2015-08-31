@@ -1,0 +1,49 @@
+.card-size {
+  width: 600px;
+  height: 280px;
+}
+
+.container {
+  perspective: 1000;
+  @extend .card-size;
+
+  &:hover .flipper  {
+    transform: rotateY(180deg);
+  }
+
+  .flipper {
+  	transition: 0.6s;
+  	transform-style: preserve-3d;
+
+  	position: relative;
+
+
+  }
+
+  .front{
+    background-color: #F1C40F;
+    @extend .card-size;
+    z-index: 2;
+    transform: rotateY(0deg);
+  }
+  .back {
+    background-color: #1ABC9C;
+    @extend .card-size;
+    transform: rotateY(180deg);
+
+  }
+  // If you didn't want to use 3d transforms, you could instachange
+  // &:hover {
+  //   .back {
+  //     z-index: 3;
+  //   }
+  // }
+}
+
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
